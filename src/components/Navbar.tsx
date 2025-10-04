@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,14 +41,15 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center space-x-2" onClick={(e) => {
+          <a href="#hero" className="flex items-center" onClick={(e) => {
             e.preventDefault();
             scrollToSection("#hero");
           }}>
-            <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">A</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Advarz Studio</span>
+            <img 
+              src={logo} 
+              alt="Advarz Studio" 
+              className="h-12 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}
