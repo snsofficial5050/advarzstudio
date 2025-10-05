@@ -28,7 +28,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-foreground leading-tight">
-              Transform Your Brand with{" "}
+              Let's Fuel Your Brand with{" "}
               <span className="text-gradient">Creative Excellence</span>
             </h1>
 
