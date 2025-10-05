@@ -22,7 +22,8 @@ const Clients = () => {
           {clients.map((client, index) => (
             <div
               key={index}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100 slide-in-right"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <img
                 src={client.logo}

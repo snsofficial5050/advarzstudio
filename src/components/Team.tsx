@@ -68,8 +68,8 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="group card-elegant p-6 text-center hover-lift fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group card-elegant p-6 text-center hover-lift slide-in-right"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="mb-6 flex justify-center">
                 <Avatar className="h-32 w-32 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">

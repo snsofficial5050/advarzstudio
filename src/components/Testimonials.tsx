@@ -48,8 +48,8 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="card-elegant hover-lift"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="card-elegant hover-lift slide-in-left"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex items-center mb-6">
                 <img
