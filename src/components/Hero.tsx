@@ -27,7 +27,7 @@ const Hero = () => {
               <span>Creative Marketing Agency</span>
             </div>
 
-            <h1 className="text-foreground leading-tight">
+            <h1 className="text-foreground leading-tight font-bold">
               Let's Fuel Your Brand with{" "}
               <span className="text-gradient">Creative Excellence</span>
             </h1>
