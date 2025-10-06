@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Brand Colors - Advarz Studio */
-    --background: 213 100% 96%;
+    --background: 213 100% 98%;
     --foreground: 225 15% 20%;
 
     --card: 0 0% 100%;
@@ -30,10 +30,10 @@ All colors MUST be HSL.
     --accent-hover: 215 100% 55%;
 
     /* Soft Blue Backgrounds */
-    --secondary: 213 100% 94%;
+    --secondary: 213 100% 97%;
     --secondary-foreground: 225 15% 20%;
 
-    --muted: 213 60% 92%;
+    --muted: 213 60% 96%;
     --muted-foreground: 225 10% 50%;
 
     --destructive: 0 84.2% 60.2%;
@@ -46,12 +46,12 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients - Advarz Studio */
-    --gradient-hero: linear-gradient(135deg, hsl(213 100% 96%) 0%, hsl(213 100% 92%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(213 100% 98%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(213 100% 98%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
     --gradient-button: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
     --gradient-button-hover: linear-gradient(135deg, hsl(215 100% 50%) 0%, hsl(215 100% 35%) 100%);
-    --gradient-icon: linear-gradient(135deg, hsl(215 100% 45%) 0%, hsl(225 99% 30%) 100%);
+    --gradient-icon: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
 
     /* Shadows - Blue Theme */
     --shadow-card: 0 4px 20px -2px hsl(215 100% 38% / 0.08);

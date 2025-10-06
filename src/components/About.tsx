@@ -48,17 +48,17 @@ const About = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="card-elegant hover-lift group"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <feature.icon className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+          <div
+            key={index}
+            className="card-elegant hover-lift group"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all bg-gradient-accent group-hover:bg-white">
+              <feature.icon className="w-8 h-8 text-white group-hover:text-[#004AC3] transition-colors" />
             </div>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
+            <p className="text-muted-foreground">{feature.description}</p>
+          </div>
           ))}
         </div>
       </div>
