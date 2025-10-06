@@ -9,51 +9,54 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Brand Colors - Advarz Studio */
-    --background: 250 100% 98%;
-    --foreground: 240 10% 15%;
+    --background: 213 100% 96%;
+    --foreground: 225 15% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card-foreground: 225 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: 225 15% 20%;
 
-    /* Deep Purple Primary */
-    --primary: 253 76% 58%;
+    /* Advarz Studio Blue Primary */
+    --primary: 215 100% 38%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 253 76% 75%;
-    --primary-dark: 253 76% 45%;
+    --primary-light: 215 100% 60%;
+    --primary-dark: 225 99% 25%;
 
-    /* Vibrant Orange Accent */
-    --accent: 14 100% 60%;
+    /* Advarz Studio Blue Accent */
+    --accent: 215 100% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 14 100% 55%;
+    --accent-hover: 215 100% 55%;
 
-    /* Soft Backgrounds */
-    --secondary: 250 100% 96%;
-    --secondary-foreground: 240 10% 15%;
+    /* Soft Blue Backgrounds */
+    --secondary: 213 100% 94%;
+    --secondary-foreground: 225 15% 20%;
 
-    --muted: 250 60% 95%;
-    --muted-foreground: 240 5% 50%;
+    --muted: 213 60% 92%;
+    --muted-foreground: 225 10% 50%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 40% 90%;
-    --input: 250 40% 90%;
-    --ring: 253 76% 58%;
+    --border: 213 40% 88%;
+    --input: 213 40% 88%;
+    --ring: 215 100% 38%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(253 76% 58%) 0%, hsl(280 70% 65%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(250 100% 99%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(14 100% 60%) 0%, hsl(30 100% 55%) 100%);
+    /* Gradients - Advarz Studio */
+    --gradient-hero: linear-gradient(135deg, hsl(213 100% 96%) 0%, hsl(213 100% 92%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(213 100% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
+    --gradient-button-hover: linear-gradient(135deg, hsl(215 100% 50%) 0%, hsl(215 100% 35%) 100%);
 
-    /* Shadows */
-    --shadow-card: 0 4px 20px -2px hsl(253 76% 58% / 0.08);
-    --shadow-card-hover: 0 8px 30px -4px hsl(253 76% 58% / 0.15);
-    --shadow-accent: 0 4px 20px -2px hsl(14 100% 60% / 0.25);
+    /* Shadows - Blue Theme */
+    --shadow-card: 0 4px 20px -2px hsl(215 100% 38% / 0.08);
+    --shadow-card-hover: 0 8px 30px -4px hsl(215 100% 38% / 0.15);
+    --shadow-accent: 0 4px 20px -2px hsl(215 100% 50% / 0.3);
+    --shadow-glow: 0 0 30px hsl(215 100% 60% / 0.4);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -91,7 +94,7 @@ All colors MUST be HSL.
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-hero);
+    background-image: var(--gradient-accent);
   }
 
   .fade-in {

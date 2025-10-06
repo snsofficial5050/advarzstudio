@@ -11,11 +11,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-secondary via-background to-muted">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-secondary to-muted">
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-6 py-32 relative z-10">
@@ -73,7 +73,7 @@ const Hero = () => {
               />
             </div>
             {/* Decorative Floating Elements */}
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent rounded-2xl rotate-12 opacity-20 animate-pulse"></div>
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary rounded-2xl rotate-12 opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-full opacity-20 animate-pulse delay-500"></div>
           </div>
         </div>
