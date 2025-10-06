@@ -51,6 +51,7 @@ All colors MUST be HSL.
     --gradient-accent: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
     --gradient-button: linear-gradient(135deg, hsl(215 100% 38%) 0%, hsl(225 99% 25%) 100%);
     --gradient-button-hover: linear-gradient(135deg, hsl(215 100% 50%) 0%, hsl(215 100% 35%) 100%);
+    --gradient-icon: linear-gradient(135deg, hsl(215 100% 45%) 0%, hsl(225 99% 30%) 100%);
 
     /* Shadows - Blue Theme */
     --shadow-card: 0 4px 20px -2px hsl(215 100% 38% / 0.08);

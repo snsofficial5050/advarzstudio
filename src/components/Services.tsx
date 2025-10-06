@@ -63,15 +63,15 @@ const Services = () => {
               className="card-elegant hover-lift group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-gradient-hero transition-all">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+                <service.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground">{service.title}</h3>
               <p className="text-muted-foreground mb-6">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3"></div>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}

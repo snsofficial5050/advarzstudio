@@ -56,7 +56,7 @@ const Pricing = () => {
     <section id="pricing" className="py-24 bg-gradient-to-br from-secondary via-background to-muted relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-40 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-40 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -82,7 +82,7 @@ const Pricing = () => {
             >
               {plan.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-accent text-white px-4 py-1 rounded-full text-sm font-semibold shadow-accent">
                     Most Popular
                   </span>
                 </div>
@@ -100,7 +100,7 @@ const Pricing = () => {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
-                    <Check className="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}

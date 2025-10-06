@@ -16,42 +16,42 @@ const Portfolio = () => {
       title: "Tech Startup Brand",
       category: "branding",
       image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80",
-      color: "from-blue-500 to-purple-500",
+      color: "from-[#004AC3] to-[#011880]",
     },
     {
       id: 2,
       title: "E-commerce Platform",
       category: "web",
       image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
-      color: "from-pink-500 to-rose-500",
+      color: "from-[#0052D6] to-[#002E80]",
     },
     {
       id: 3,
       title: "Social Media Campaign",
       category: "marketing",
       image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
-      color: "from-orange-500 to-yellow-500",
+      color: "from-[#0066FF] to-[#003D99]",
     },
     {
       id: 4,
       title: "Restaurant Rebrand",
       category: "branding",
       image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
-      color: "from-green-500 to-teal-500",
+      color: "from-[#004AC3] to-[#001A66]",
     },
     {
       id: 5,
       title: "Mobile App Design",
       category: "web",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-      color: "from-indigo-500 to-blue-500",
+      color: "from-[#0057E6] to-[#002D73]",
     },
     {
       id: 6,
       title: "Product Launch",
       category: "marketing",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-      color: "from-purple-500 to-pink-500",
+      color: "from-[#0061F2] to-[#00338C]",
     },
   ];
 
@@ -80,7 +80,7 @@ const Portfolio = () => {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-6 py-3 rounded-full font-medium transition-all ${
                 activeCategory === cat.id
-                  ? "bg-primary text-primary-foreground shadow-md"
+                  ? "bg-gradient-accent text-white shadow-accent"
                   : "bg-secondary text-secondary-foreground hover:bg-primary/10"
               }`}
             >
