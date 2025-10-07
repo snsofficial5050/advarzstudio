@@ -25,7 +25,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#004AC3] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">A</span>
               </div>
               <span className="text-xl font-bold">Advarz Studio</span>
@@ -38,7 +38,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-background/10 hover:bg-gradient-accent rounded-lg flex items-center justify-center transition-all hover:scale-110"
+                  className="w-10 h-10 bg-background/10 hover:bg-[#004AC3] rounded-lg flex items-center justify-center transition-all hover:scale-110"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>

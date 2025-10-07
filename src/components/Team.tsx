@@ -91,21 +91,21 @@ const Team = () => {
               <div className="flex justify-center gap-4">
                 <a
                   href={member.social.twitter}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-[#004AC3] transition-colors"
                   aria-label="Twitter"
                 >
                   <Twitter size={20} />
                 </a>
                 <a
                   href={member.social.linkedin}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-[#004AC3] transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={20} />
                 </a>
                 <a
                   href={member.social.github}
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="text-muted-foreground hover:text-[#004AC3] transition-colors"
                   aria-label="GitHub"
                 >
                   <Github size={20} />

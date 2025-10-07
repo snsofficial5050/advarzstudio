@@ -53,7 +53,7 @@ const About = () => {
             className="card-elegant hover-lift group"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all bg-gradient-accent group-hover:bg-white">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all bg-[#004AC3] group-hover:bg-white">
               <feature.icon className="w-8 h-8 text-white group-hover:text-[#004AC3] transition-colors" />
             </div>
             <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>

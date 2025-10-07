@@ -63,7 +63,7 @@ const Services = () => {
               className="card-elegant hover-lift group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 bg-gradient-accent rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
+              <div className="w-14 h-14 bg-[#004AC3] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all">
                 <service.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-foreground">{service.title}</h3>
