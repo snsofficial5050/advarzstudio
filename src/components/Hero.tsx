@@ -29,7 +29,7 @@ const Hero = () => {
 
             <h1 className="text-foreground leading-tight font-bold">
               Let's Fuel Your Brand with{" "}
-              <span className="text-gradient">Creative Excellence</span>
+              <span className="text-gradient">Soul & Strategy</span>
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-xl">
