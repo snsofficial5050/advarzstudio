@@ -24,11 +24,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-[#004AC3] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">A</span>
-              </div>
-              <span className="text-xl font-bold">Advarz Studio</span>
+            <div className="mb-4">
+              <div className="text-3xl font-bold tracking-tight">advarz</div>
+              <div className="text-sm tracking-[0.3em] font-light">studio</div>
             </div>
             <p className="text-background/70 mb-6 max-w-sm">
               Transforming brands through creative excellence and innovative marketing strategies.
