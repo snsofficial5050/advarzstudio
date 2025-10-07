@@ -33,7 +33,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-xl text-muted-foreground max-w-xl">
-              We craft stunning visual identities and marketing strategies that elevate your business and captivate your audience.
+              Welcome to Advarz Studio – where ideas become stunning visuals and digital experiences that elevate your brand.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
