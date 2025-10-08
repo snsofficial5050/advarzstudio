@@ -53,6 +53,48 @@ const Portfolio = () => {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       color: "from-[#0061F2] to-[#00338C]",
     },
+    {
+      id: 7,
+      title: "Fashion Brand Identity",
+      category: "branding",
+      image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=800&q=80",
+      color: "from-[#0048B8] to-[#001F5C]",
+    },
+    {
+      id: 8,
+      title: "SaaS Dashboard",
+      category: "web",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+      color: "from-[#005CE6] to-[#003380]",
+    },
+    {
+      id: 9,
+      title: "Email Marketing Series",
+      category: "marketing",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+      color: "from-[#0063F5] to-[#003699]",
+    },
+    {
+      id: 10,
+      title: "Coffee Shop Branding",
+      category: "branding",
+      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+      color: "from-[#004DBF] to-[#00236B]",
+    },
+    {
+      id: 11,
+      title: "Portfolio Website",
+      category: "web",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80",
+      color: "from-[#0055D9] to-[#002B70]",
+    },
+    {
+      id: 12,
+      title: "Influencer Campaign",
+      category: "marketing",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+      color: "from-[#0069FF] to-[#003B99]",
+    },
   ];
 
   const filteredProjects =
