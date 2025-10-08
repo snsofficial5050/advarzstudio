@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 py-[350px] relative z-10">
-        <div className="grid lg:grid-cols-2 gap-x-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 fade-in-up">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
@@ -47,18 +47,18 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 w-full">
+            <div className="grid grid-cols-3 gap-8 pt-8">
               <div>
-                <div className="text-4xl font-bold text-primary">350+</div>
+                <div className="text-4xl font-bold text-primary">500+</div>
                 <div className="text-sm text-muted-foreground">Projects Done</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">50+</div>
+                <div className="text-4xl font-bold text-primary">200+</div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">100%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
+                <div className="text-4xl font-bold text-primary">8+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
             </div>
           </div>
