@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-illustration.jpg";
-
 const Hero = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-secondary to-muted">
+  return <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-secondary to-muted">
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -49,16 +48,16 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div>
-                <div className="text-4xl font-bold text-primary">500+</div>
+                <div className="text-4xl font-bold text-primary">350+</div>
                 <div className="text-sm text-muted-foreground">Projects Done</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">200+</div>
+                <div className="text-4xl font-bold text-primary">50+</div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">8+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-4xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
             </div>
           </div>
@@ -66,11 +65,7 @@ const Hero = () => {
           {/* Right Image */}
           <div className="relative fade-in">
             <div className="relative z-10">
-              <img
-                src={heroImage}
-                alt="Creative marketing and design illustration"
-                className="w-full h-auto rounded-3xl shadow-2xl hover-lift"
-              />
+              <img src={heroImage} alt="Creative marketing and design illustration" className="w-full h-auto rounded-3xl shadow-2xl hover-lift" />
             </div>
             {/* Decorative Floating Elements */}
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary rounded-2xl rotate-12 opacity-20 animate-pulse"></div>
@@ -82,14 +77,9 @@ const Hero = () => {
       {/* Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg viewBox="0 0 1440 120" className="w-full h-auto">
-          <path
-            fill="hsl(var(--card))"
-            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-          ></path>
+          <path fill="hsl(var(--card))" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
         </svg>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
