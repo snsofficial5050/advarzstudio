@@ -53,7 +53,7 @@ const Hero = () => {
                 <div className="text-sm text-muted-foreground">Projects Done</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">200+</div>
+                <div className="text-4xl font-bold text-primary">50+</div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
               <div>
