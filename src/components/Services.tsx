@@ -31,7 +31,7 @@ const Services = () => {
       icon: PenTool,
       title: "Graphic Design",
       description: "Eye-catching visuals for all your marketing and branding needs",
-      features: ["Marketing Materials", "Print Design", "Banner Design", "Infographics"],
+      features: ["Campaign Ads Design", "Social Media Visuals", "Print Materials", "Brand Visual Design"],
     },
     {
       icon: BarChart3,
