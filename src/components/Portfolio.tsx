@@ -177,12 +177,15 @@ const Portfolio = () => {
         </div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500">
           {displayedProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group relative overflow-hidden rounded-2xl shadow-card hover:shadow-card-hover transition-all cursor-pointer hover-lift"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative overflow-hidden rounded-2xl shadow-card hover:shadow-card-hover transition-all cursor-pointer hover-lift animate-fade-in"
+              style={{ 
+                animationDelay: `${index * 50}ms`,
+                animationFillMode: 'both'
+              }}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
