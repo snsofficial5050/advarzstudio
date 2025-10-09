@@ -25,7 +25,7 @@ const Services = () => {
       icon: Video,
       title: "Video Production",
       description: "Engaging video content that tells your story and captivates your audience",
-      features: ["Promotional Videos", "Animations", "Social Content", "Brand Stories"],
+      features: ["Promotions Ads", "Reels Editing", "Campaign Short Editing", "Full Video Editing"],
     },
     {
       icon: PenTool,
