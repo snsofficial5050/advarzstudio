@@ -32,10 +32,13 @@ const Testimonials = () => {
     },
   ];
 
+  // Duplicate testimonials for seamless loop
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   return (
-    <section id="testimonials" className="py-24 bg-card">
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+    <section id="testimonials" className="py-24 bg-card overflow-hidden">
+      <div className="container mx-auto px-6 mb-16">
+        <div className="text-center max-w-3xl mx-auto fade-in-up">
           <h2 className="mb-6">
             What Our <span className="text-gradient">Clients Say</span>
           </h2>
@@ -43,13 +46,18 @@ const Testimonials = () => {
             Don't just take our word for it - hear from the businesses we've helped transform
           </p>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {testimonials.map((testimonial, index) => (
+      <div className="relative">
+        <div className="flex gap-8 group hover:[animation-play-state:paused]" 
+             style={{ 
+               animation: 'scroll-right 30s linear infinite',
+               width: 'fit-content'
+             }}>
+          {duplicatedTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="card-elegant hover-lift slide-in-left"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="card-elegant min-w-[350px] flex-shrink-0"
             >
               <div className="flex items-center mb-6">
                 <img
@@ -65,7 +73,7 @@ const Testimonials = () => {
 
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#004AC3] text-[#004AC3]" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
 
