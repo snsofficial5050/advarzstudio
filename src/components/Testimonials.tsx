@@ -40,27 +40,55 @@ const Testimonials = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const animationRef = useRef<number | null>(null);
+  const velocityRef = useRef(0);
+
+  // Continuous scroll animation
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const animate = () => {
+      if (!isDragging) {
+        container.scrollLeft += 1; // Continuous scroll speed
+        
+        // Reset scroll position for infinite loop
+        const maxScroll = container.scrollWidth / 3;
+        if (container.scrollLeft >= maxScroll) {
+          container.scrollLeft = 0;
+        }
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isDragging]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
-    setIsPaused(true);
     setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
     setScrollLeft(containerRef.current?.scrollLeft || 0);
+    velocityRef.current = 0;
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setTimeout(() => setIsPaused(false), 100);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - (containerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 2.5; // Smooth drag with momentum
     if (containerRef.current) {
       containerRef.current.scrollLeft = scrollLeft - walk;
+      velocityRef.current = walk;
     }
   };
 
@@ -88,11 +116,9 @@ const Testimonials = () => {
           ref={containerRef}
           className="flex gap-8 overflow-x-auto scrollbar-hide" 
           style={{ 
-            animation: isPaused ? 'none' : 'scroll-left 30s linear infinite',
-            width: 'fit-content'
+            width: 'fit-content',
+            scrollBehavior: isDragging ? 'auto' : 'smooth'
           }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => !isDragging && setIsPaused(false)}
         >
           {duplicatedTestimonials.map((testimonial, index) => (
             <div
