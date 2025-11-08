@@ -49,10 +49,13 @@ const Team = () => {
     }
   ];
 
+  // Duplicate team members for seamless loop
+  const duplicatedTeamMembers = [...teamMembers, ...teamMembers];
+
   return (
-    <section id="team" className="py-24 bg-gradient-subtle">
-      <div className="container mx-auto px-6">
-        <div className="text-center fade-in mb-16">
+    <section id="team" className="py-24 bg-gradient-subtle overflow-hidden">
+      <div className="container mx-auto px-4 mb-16">
+        <div className="text-center fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
             <span>Our Team</span>
           </div>
@@ -63,15 +66,21 @@ const Team = () => {
             Talented professionals dedicated to bringing your vision to life
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
+      <div className="relative">
+        <div className="flex gap-8 group hover:[animation-play-state:paused]" 
+             style={{ 
+               animation: 'scroll-left 35s linear infinite',
+               width: 'fit-content'
+             }}>
+          {duplicatedTeamMembers.map((member, index) => (
             <div
               key={index}
-              className="card-elegant p-6 text-center hover-lift"
+              className="card-elegant min-w-[320px] p-6 text-center flex-shrink-0"
             >
               <div className="mb-6 flex justify-center">
-                <Avatar className="h-32 w-32 border-4 border-primary/20">
+                <Avatar className="h-32 w-32 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
                   <AvatarImage src={member.image} alt={member.name} />
                   <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                 </Avatar>

@@ -1,6 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-illustration.jpg";
+import { useState, useEffect } from "react";
+
+const CountingNumber = ({ target, suffix = "" }: { target: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const duration = 1000; // 1 second
+    const steps = 50;
+    const increment = target / steps;
+    const stepDuration = duration / steps;
+
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, stepDuration);
+
+    return () => clearInterval(timer);
+  }, [target]);
+
+  return <span>{count}{suffix}</span>;
+};
 
 const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -49,15 +76,21 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div>
-                <div className="text-4xl font-bold text-primary">350+</div>
+                <div className="text-4xl font-bold text-primary">
+                  <CountingNumber target={350} suffix="+" />
+                </div>
                 <div className="text-sm text-muted-foreground">Projects Done</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">50+</div>
+                <div className="text-4xl font-bold text-primary">
+                  <CountingNumber target={50} suffix="+" />
+                </div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-primary">100%</div>
+                <div className="text-4xl font-bold text-primary">
+                  <CountingNumber target={100} suffix="%" />
+                </div>
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
             </div>
