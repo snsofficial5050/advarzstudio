@@ -41,16 +41,15 @@ const Testimonials = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const animationRef = useRef<number | null>(null);
-  const velocityRef = useRef(0);
 
-  // Continuous scroll animation
+  // Continuous left-to-right scroll animation
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const animate = () => {
       if (!isDragging) {
-        container.scrollLeft += 1; // Continuous scroll speed
+        container.scrollLeft += 0.8; // Smooth scroll speed
         
         // Reset scroll position for infinite loop
         const maxScroll = container.scrollWidth / 3;
@@ -74,7 +73,6 @@ const Testimonials = () => {
     setIsDragging(true);
     setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
     setScrollLeft(containerRef.current?.scrollLeft || 0);
-    velocityRef.current = 0;
   };
 
   const handleMouseUp = () => {
@@ -85,11 +83,29 @@ const Testimonials = () => {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - (containerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2.5; // Smooth drag with momentum
+    const walk = (x - startX) * 2; // Smooth drag with momentum
     if (containerRef.current) {
       containerRef.current.scrollLeft = scrollLeft - walk;
-      velocityRef.current = walk;
     }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - (containerRef.current?.offsetLeft || 0));
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - (containerRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
   };
 
   return (
@@ -106,18 +122,21 @@ const Testimonials = () => {
       </div>
 
       <div 
-        className="relative cursor-grab active:cursor-grabbing"
+        className="relative cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div 
           ref={containerRef}
           className="flex gap-8 overflow-x-auto scrollbar-hide" 
           style={{ 
             width: 'fit-content',
-            scrollBehavior: isDragging ? 'auto' : 'smooth'
+            scrollBehavior: 'auto'
           }}
         >
           {duplicatedTestimonials.map((testimonial, index) => (

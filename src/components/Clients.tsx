@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const Clients = () => {
   const clients = [
@@ -17,18 +17,52 @@ const Clients = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const animationRef = useRef<number | null>(null);
+
+  // Continuous right-to-left scroll animation
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    // Set initial scroll position to middle for bidirectional scrolling
+    if (container.scrollLeft === 0) {
+      container.scrollLeft = container.scrollWidth / 3;
+    }
+
+    const animate = () => {
+      if (!isDragging) {
+        container.scrollLeft -= 0.6; // Scroll to the left (right-to-left)
+        
+        // Reset scroll position for infinite loop
+        const maxScroll = (container.scrollWidth / 3) * 2;
+        const minScroll = 0;
+        
+        if (container.scrollLeft <= minScroll) {
+          container.scrollLeft = container.scrollWidth / 3;
+        } else if (container.scrollLeft >= maxScroll) {
+          container.scrollLeft = container.scrollWidth / 3;
+        }
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isDragging]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
-    setIsPaused(true);
     setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
     setScrollLeft(containerRef.current?.scrollLeft || 0);
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setTimeout(() => setIsPaused(false), 100);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -39,6 +73,25 @@ const Clients = () => {
     if (containerRef.current) {
       containerRef.current.scrollLeft = scrollLeft - walk;
     }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - (containerRef.current?.offsetLeft || 0));
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - (containerRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
   };
 
   return (
@@ -53,21 +106,22 @@ const Clients = () => {
       </div>
 
       <div 
-        className="relative cursor-grab active:cursor-grabbing"
+        className="relative cursor-grab active:cursor-grabbing select-none"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div 
           ref={containerRef}
           className="flex gap-16 items-center overflow-x-auto scrollbar-hide" 
           style={{ 
-            animation: isPaused ? 'none' : 'scroll-left 25s linear infinite',
-            width: 'fit-content'
+            width: 'fit-content',
+            scrollBehavior: 'auto'
           }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => !isDragging && setIsPaused(false)}
         >
           {duplicatedClients.map((client, index) => (
             <div
@@ -78,7 +132,7 @@ const Clients = () => {
                 src={client.logo}
                 alt={client.name}
                 className="h-16 w-auto object-contain"
-                style={{ filter: 'contrast(1.2) brightness(1.1)' }}
+                style={{ filter: 'contrast(1.3) brightness(1.15) saturate(1.1)' }}
               />
             </div>
           ))}
