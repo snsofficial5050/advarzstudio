@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
 
 const Testimonials = () => {
   const testimonials = [
@@ -33,7 +34,35 @@ const Testimonials = () => {
   ];
 
   // Duplicate testimonials for seamless loop
-  const duplicatedTestimonials = [...testimonials, ...testimonials];
+  const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setIsPaused(true);
+    setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
+    setScrollLeft(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setTimeout(() => setIsPaused(false), 100);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - (containerRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
 
   return (
     <section id="testimonials" className="py-24 bg-card overflow-hidden">
@@ -48,12 +77,23 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="relative">
-        <div className="flex gap-8 group hover:[animation-play-state:paused]" 
-             style={{ 
-               animation: 'scroll-right 30s linear infinite',
-               width: 'fit-content'
-             }}>
+      <div 
+        className="relative cursor-grab active:cursor-grabbing"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onMouseMove={handleMouseMove}
+      >
+        <div 
+          ref={containerRef}
+          className="flex gap-8 overflow-x-auto scrollbar-hide" 
+          style={{ 
+            animation: isPaused ? 'none' : 'scroll-left 30s linear infinite',
+            width: 'fit-content'
+          }}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => !isDragging && setIsPaused(false)}
+        >
           {duplicatedTestimonials.map((testimonial, index) => (
             <div
               key={index}

@@ -98,6 +98,15 @@ All colors MUST be HSL.
     background-image: var(--gradient-accent);
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
