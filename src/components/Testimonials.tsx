@@ -97,7 +97,7 @@ const Testimonials = () => {
           {duplicatedTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="card-elegant min-w-[350px] flex-shrink-0"
+              className="card-elegant min-w-[350px] w-[350px] h-[350px] flex-shrink-0 flex flex-col"
             >
               <div className="flex items-center mb-6">
                 <img
@@ -117,7 +117,7 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
+              <p className="text-muted-foreground italic line-clamp-4">"{testimonial.quote}"</p>
             </div>
           ))}
         </div>
