@@ -57,7 +57,7 @@ const Team = () => {
             <span>Our Team</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Meet the Creative Minds
+            Meet Our Creative Minds
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Talented professionals dedicated to bringing your vision to life
