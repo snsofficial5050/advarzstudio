@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 const Testimonials = () => {
   const testimonials = [
@@ -37,9 +37,6 @@ const Testimonials = () => {
   const duplicatedTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const animationRef = useRef<number | null>(null);
 
   // Continuous left-to-right scroll animation
@@ -48,14 +45,12 @@ const Testimonials = () => {
     if (!container) return;
 
     const animate = () => {
-      if (!isDragging) {
-        container.scrollLeft += 0.8; // Smooth scroll speed
-        
-        // Reset scroll position for infinite loop
-        const maxScroll = container.scrollWidth / 3;
-        if (container.scrollLeft >= maxScroll) {
-          container.scrollLeft = 0;
-        }
+      container.scrollLeft += 0.8; // Smooth scroll speed
+      
+      // Reset scroll position for infinite loop
+      const maxScroll = container.scrollWidth / 3;
+      if (container.scrollLeft >= maxScroll) {
+        container.scrollLeft = 0;
       }
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -67,46 +62,7 @@ const Testimonials = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isDragging]);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
-    setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
-    setScrollLeft(containerRef.current?.scrollLeft || 0);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - (containerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2; // Smooth drag with momentum
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - (containerRef.current?.offsetLeft || 0));
-    setScrollLeft(containerRef.current?.scrollLeft || 0);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - (containerRef.current?.offsetLeft || 0);
-    const walk = (x - startX) * 2;
-    if (containerRef.current) {
-      containerRef.current.scrollLeft = scrollLeft - walk;
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
+  }, []);
 
   return (
     <section id="testimonials" className="py-24 bg-card overflow-hidden">
@@ -121,16 +77,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div 
-        className="relative cursor-grab active:cursor-grabbing select-none"
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onMouseMove={handleMouseMove}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className="relative select-none">
         <div 
           ref={containerRef}
           className="flex gap-8 overflow-x-auto scrollbar-hide" 
