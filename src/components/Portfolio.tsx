@@ -183,7 +183,7 @@ const Portfolio = () => {
     {
       id: 22,
       title: "Tech Thumbnail Design",
-      category: "web",
+      category: "marketing",
       image: "https://i.postimg.cc/G3Sc0sQ3/thumb16.jpg",
       link: "https://www.behance.net/gallery/218570447/Tech-Thumbnail-Design-AFR-Technology",
       color: "from-[#004FC9] to-[#00246B]",
