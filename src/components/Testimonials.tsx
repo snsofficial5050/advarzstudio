@@ -42,28 +42,19 @@ const Testimonials = () => {
   const [scrollLeft, setScrollLeft] = useState(0);
   const animationRef = useRef<number | null>(null);
 
-  // Continuous right-to-left scroll animation
+  // Continuous left-to-right scroll animation
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    // Set initial scroll position to middle for bidirectional scrolling
-    if (container.scrollLeft === 0) {
-      container.scrollLeft = container.scrollWidth / 3;
-    }
-
     const animate = () => {
       if (!isDragging) {
-        container.scrollLeft -= 0.8; // Scroll to the left (right-to-left)
+        container.scrollLeft += 0.8; // Smooth scroll speed
         
         // Reset scroll position for infinite loop
-        const maxScroll = (container.scrollWidth / 3) * 2;
-        const minScroll = 0;
-        
-        if (container.scrollLeft <= minScroll) {
-          container.scrollLeft = container.scrollWidth / 3;
-        } else if (container.scrollLeft >= maxScroll) {
-          container.scrollLeft = container.scrollWidth / 3;
+        const maxScroll = container.scrollWidth / 3;
+        if (container.scrollLeft >= maxScroll) {
+          container.scrollLeft = 0;
         }
       }
       animationRef.current = requestAnimationFrame(animate);
