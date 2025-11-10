@@ -30,7 +30,7 @@ const Team = () => {
       }
     },
     {
-      name: "Emily Rodriguez",
+      name: "Shahriar Nayem Suny",
       role: "Marketing Strategist",
       image: emilyProfile,
       bio: "Data-driven marketing strategies that deliver results",
