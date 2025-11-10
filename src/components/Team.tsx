@@ -1,5 +1,6 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import emilyProfile from "@/assets/emily-profile.png";
 
 const Team = () => {
   const teamMembers = [
@@ -28,7 +29,7 @@ const Team = () => {
     {
       name: "Emily Rodriguez",
       role: "Marketing Strategist",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      image: emilyProfile,
       bio: "Data-driven marketing strategies that deliver results",
       social: {
         twitter: "#",
