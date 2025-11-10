@@ -19,7 +19,7 @@ const Team = () => {
       }
     },
     {
-      name: "Michael Chen",
+      name: "NH Nabil",
       role: "Lead Designer",
       image: michaelProfile,
       bio: "Crafting beautiful experiences through design",
