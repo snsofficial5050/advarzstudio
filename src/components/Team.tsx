@@ -1,13 +1,14 @@
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import emilyProfile from "@/assets/emily-profile.png";
+import sarahProfile from "@/assets/sarah-profile.jpg";
 
 const Team = () => {
   const teamMembers = [
     {
       name: "Sarah Johnson",
       role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: sarahProfile,
       bio: "Leading creative vision with 10+ years of experience",
       social: {
         twitter: "#",
