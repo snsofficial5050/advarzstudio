@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import emilyProfile from "@/assets/emily-profile.png";
 import sarahProfile from "@/assets/sarah-profile.jpg";
 import michaelProfile from "@/assets/michael-profile.jpg";
+import davidProfile from "@/assets/david-profile.jpg";
 
 const Team = () => {
   const teamMembers = [
@@ -42,7 +43,7 @@ const Team = () => {
     {
       name: "David Park",
       role: "Brand Consultant",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: davidProfile,
       bio: "Building memorable brands that resonate",
       social: {
         twitter: "#",
