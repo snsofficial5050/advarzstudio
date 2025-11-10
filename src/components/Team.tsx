@@ -2,6 +2,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import emilyProfile from "@/assets/emily-profile.png";
 import sarahProfile from "@/assets/sarah-profile.jpg";
+import michaelProfile from "@/assets/michael-profile.jpg";
 
 const Team = () => {
   const teamMembers = [
@@ -19,7 +20,7 @@ const Team = () => {
     {
       name: "Michael Chen",
       role: "Lead Designer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: michaelProfile,
       bio: "Crafting beautiful experiences through design",
       social: {
         twitter: "#",
