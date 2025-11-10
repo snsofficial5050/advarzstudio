@@ -8,7 +8,7 @@ import davidProfile from "@/assets/david-profile.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Ferdous Hasan",
       role: "Creative Director",
       image: sarahProfile,
       bio: "Leading creative vision with 10+ years of experience",
