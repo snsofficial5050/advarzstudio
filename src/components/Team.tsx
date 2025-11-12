@@ -42,7 +42,7 @@ const Team = () => {
     },
     {
       name: "Antar Bala",
-      role: "Brand Consultant",
+      role: "Sr. Visualizer",
       image: davidProfile,
       bio: "Building memorable brands that resonate",
       social: {
