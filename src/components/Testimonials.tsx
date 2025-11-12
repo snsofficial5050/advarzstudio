@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const Testimonials = () => {
   const testimonials = [
@@ -38,6 +38,10 @@ const Testimonials = () => {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollStart, setScrollStart] = useState(0);
+  const dragOffsetRef = useRef(0);
 
   // Continuous left-to-right scroll animation
   useEffect(() => {
@@ -45,12 +49,14 @@ const Testimonials = () => {
     if (!container) return;
 
     const animate = () => {
-      container.scrollLeft += 0.8; // Smooth scroll speed
-      
-      // Reset scroll position for infinite loop
-      const maxScroll = container.scrollWidth / 3;
-      if (container.scrollLeft >= maxScroll) {
-        container.scrollLeft = 0;
+      if (!isDragging) {
+        container.scrollLeft += 0.8; // Smooth scroll speed
+        
+        // Reset scroll position for infinite loop
+        const maxScroll = container.scrollWidth / 3;
+        if (container.scrollLeft >= maxScroll) {
+          container.scrollLeft = 0;
+        }
       }
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -62,7 +68,48 @@ const Testimonials = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [isDragging]);
+
+  // Drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX);
+    setScrollStart(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = (startX - x) * 1.5; // Scroll speed multiplier
+    containerRef.current.scrollLeft = scrollStart + walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX);
+    setScrollStart(containerRef.current?.scrollLeft || 0);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    const x = e.touches[0].pageX;
+    const walk = (startX - x) * 1.5;
+    containerRef.current.scrollLeft = scrollStart + walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   return (
     <section id="testimonials" className="py-24 bg-card overflow-hidden">
@@ -80,11 +127,18 @@ const Testimonials = () => {
       <div className="relative select-none">
         <div 
           ref={containerRef}
-          className="flex gap-8 overflow-x-auto scrollbar-hide" 
+          className="flex gap-8 overflow-x-auto scrollbar-hide cursor-grab active:cursor-grabbing" 
           style={{ 
             width: 'fit-content',
             scrollBehavior: 'auto'
           }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {duplicatedTestimonials.map((testimonial, index) => (
             <div
