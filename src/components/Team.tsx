@@ -9,7 +9,7 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Ferdous Hasan",
-      role: "Creative Director",
+      role: "Founder & Video Editor",
       image: sarahProfile,
       bio: "Leading creative vision with 10+ years of experience",
       social: {
