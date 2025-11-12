@@ -41,6 +41,7 @@ const Testimonials = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollStart, setScrollStart] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
   const dragOffsetRef = useRef(0);
 
   // Continuous left-to-right scroll animation
@@ -50,7 +51,9 @@ const Testimonials = () => {
 
     const animate = () => {
       if (!isDragging) {
-        container.scrollLeft += 0.8; // Smooth scroll speed
+        // Slow down to 30% speed when hovering
+        const scrollSpeed = isHovering ? 0.24 : 0.8;
+        container.scrollLeft += scrollSpeed;
         
         // Reset scroll position for infinite loop
         const maxScroll = container.scrollWidth / 3;
@@ -68,7 +71,7 @@ const Testimonials = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [isDragging]);
+  }, [isDragging, isHovering]);
 
   // Drag handlers
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -143,7 +146,9 @@ const Testimonials = () => {
           {duplicatedTestimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="card-elegant min-w-[350px] w-[350px] h-[350px] flex-shrink-0 flex flex-col"
+              className="card-elegant min-w-[350px] w-[350px] h-[350px] flex-shrink-0 flex flex-col transition-all duration-300"
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
             >
               <div className="flex items-center mb-6">
                 <img
