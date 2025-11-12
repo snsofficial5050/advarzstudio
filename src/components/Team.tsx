@@ -41,7 +41,7 @@ const Team = () => {
       }
     },
     {
-      name: "David Park",
+      name: "Antar Bala",
       role: "Brand Consultant",
       image: davidProfile,
       bio: "Building memorable brands that resonate",
