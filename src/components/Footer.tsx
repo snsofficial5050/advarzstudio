@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-4">
               <div className="text-3xl font-bold tracking-tight">advarz</div>
-              <div className="text-sm tracking-[0.3em] font-light">studio</div>
+              
             </div>
             <p className="text-background/70 mb-6 max-w-sm">
               Transforming brands through creative excellence and innovative marketing strategies.
