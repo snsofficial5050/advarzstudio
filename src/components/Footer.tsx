@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerLinks = {
@@ -9,9 +9,6 @@ const Footer = () => {
   };
   const socialLinks = [{
     icon: Facebook,
-    href: "#"
-  }, {
-    icon: Twitter,
     href: "#"
   }, {
     icon: Instagram,
