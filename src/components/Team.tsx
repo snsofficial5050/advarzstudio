@@ -31,7 +31,7 @@ const Team = () => {
     },
     {
       name: "Shahriar Nayem Suny",
-      role: "Marketing Strategist",
+      role: "Sr. Visualizer",
       image: emilyProfile,
       bio: "Data-driven marketing strategies that deliver results",
       social: {
