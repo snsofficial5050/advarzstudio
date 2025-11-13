@@ -11,7 +11,7 @@ const Team = () => {
       name: "Ferdous Hasan",
       role: "Founder & Video Editor",
       image: sarahProfile,
-      bio: "Leading creative vision with 10+ years of experience",
+      bio: "Founder & CEO of Advarz Studio",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -22,7 +22,7 @@ const Team = () => {
       name: "NH Nabil",
       role: "Creative Lead",
       image: michaelProfile,
-      bio: "Crafting beautiful experiences through design",
+      bio: "Crafting brand narratives through strategic visuals",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -33,7 +33,7 @@ const Team = () => {
       name: "Shahriar Nayem Suny",
       role: "Sr. Visualizer",
       image: emilyProfile,
-      bio: "Data-driven marketing strategies that deliver results",
+      bio: "Visual Storyteller, Skilled in brand visuals",
       social: {
         twitter: "#",
         linkedin: "#",
@@ -44,7 +44,7 @@ const Team = () => {
       name: "Antar Bala",
       role: "Sr. Visualizer",
       image: davidProfile,
-      bio: "Building memorable brands that resonate",
+      bio: "Senior Graphic Designer at Advarz Studio",
       social: {
         twitter: "#",
         linkedin: "#",
