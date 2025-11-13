@@ -20,7 +20,7 @@ const Team = () => {
     },
     {
       name: "NH Nabil",
-      role: "Lead Designer",
+      role: "Creative Lead",
       image: michaelProfile,
       bio: "Crafting beautiful experiences through design",
       social: {
