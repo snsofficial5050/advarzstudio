@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import emilyProfile from "@/assets/emily-profile.png";
 import sarahProfile from "@/assets/sarah-profile.jpg";
@@ -13,9 +13,9 @@ const Team = () => {
       image: sarahProfile,
       bio: "Founder & CEO of Advarz Studio",
       social: {
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        facebook: "https://www.facebook.com/md.hasan.296222",
+        instagram: "https://www.instagram.com/ferdousmarketer/?utm_source=qr&r=nametag",
+        linkedin: "https://www.linkedin.com/in/ferdous-hasan-648b5a2a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       }
     },
     {
@@ -24,9 +24,9 @@ const Team = () => {
       image: michaelProfile,
       bio: "Crafting brand narratives through strategic visuals",
       social: {
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        facebook: "https://www.facebook.com/designernhnabil.art",
+        instagram: "https://www.instagram.com/designernhnabil/",
+        linkedin: "#"
       }
     },
     {
@@ -35,9 +35,9 @@ const Team = () => {
       image: emilyProfile,
       bio: "Visual Storyteller, Skilled in brand visuals",
       social: {
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        facebook: "https://www.facebook.com/shahriarnayemsuny",
+        instagram: "https://www.instagram.com/shahriarnayemsuny/",
+        linkedin: "https://www.linkedin.com/in/shahriarnayemsuny/"
       }
     },
     {
@@ -46,9 +46,9 @@ const Team = () => {
       image: davidProfile,
       bio: "Senior Graphic Designer at Advarz Studio",
       social: {
-        twitter: "#",
-        linkedin: "#",
-        github: "#"
+        facebook: "https://www.facebook.com/antar.bala.2024",
+        instagram: "https://www.instagram.com/antarbala7/",
+        linkedin: "#"
       }
     }
   ];
@@ -93,11 +93,18 @@ const Team = () => {
 
               <div className="flex justify-center gap-4">
                 <a
-                  href={member.social.twitter}
+                  href={member.social.facebook}
                   className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="Twitter"
+                  aria-label="Facebook"
                 >
-                  <Twitter size={20} />
+                  <Facebook size={20} />
+                </a>
+                <a
+                  href={member.social.instagram}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
                 </a>
                 <a
                   href={member.social.linkedin}
@@ -105,13 +112,6 @@ const Team = () => {
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={20} />
-                </a>
-                <a
-                  href={member.social.github}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github size={20} />
                 </a>
               </div>
             </div>
