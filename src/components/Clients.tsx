@@ -1,13 +1,30 @@
 import { useRef, useState, useEffect } from "react";
+import logo1 from "@/assets/clients/logo-1.png";
+import logo2 from "@/assets/clients/logo-2.png";
+import logo3 from "@/assets/clients/logo-3.png";
+import logo4 from "@/assets/clients/logo-4.png";
+import logo5 from "@/assets/clients/logo-5.png";
+import logo6 from "@/assets/clients/logo-6.png";
+import logo7 from "@/assets/clients/logo-7.png";
+import logo8 from "@/assets/clients/logo-8.png";
+import logo14 from "@/assets/clients/logo-14.png";
 
 const Clients = () => {
   const clients = [
-    { name: "TechCorp", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&q=80" },
-    { name: "InnovateLab", logo: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=200&q=80" },
-    { name: "GrowthWave", logo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&q=80" },
-    { name: "BrightFuture", logo: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=200&q=80" },
-    { name: "NextGen", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&q=80" },
-    { name: "Visionary", logo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&q=80" },
+    { name: "Client 1", logo: logo1 },
+    { name: "Client 2", logo: logo2 },
+    { name: "Client 3", logo: logo3 },
+    { name: "Client 4", logo: logo4 },
+    { name: "Client 5", logo: logo5 },
+    { name: "Client 6", logo: logo6 },
+    { name: "Client 7", logo: logo7 },
+    { name: "Client 8", logo: logo8 },
+    { name: "Client 9", logo: "https://i.postimg.cc/SRpCGJZG/Logo-01.png" },
+    { name: "Client 10", logo: "https://i.postimg.cc/Ssczjmyk/Logo-02.png" },
+    { name: "Client 11", logo: "https://i.postimg.cc/L6xgJCMq/Logo-03.png" },
+    { name: "Client 12", logo: "https://i.postimg.cc/vTQDB9qL/Logo-04.png" },
+    { name: "Client 13", logo: "https://i.postimg.cc/L6Qh9Jzf/Logo-05.png" },
+    { name: "Client 14", logo: logo14 },
   ];
 
   // Duplicate clients for seamless loop
@@ -117,13 +134,12 @@ const Clients = () => {
           {duplicatedClients.map((client, index) => (
             <div
               key={index}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100 flex-shrink-0"
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all flex-shrink-0"
             >
               <img
                 src={client.logo}
                 alt={client.name}
                 className="h-16 w-auto object-contain"
-                style={{ filter: 'contrast(1.3) brightness(1.15) saturate(1.1)' }}
               />
             </div>
           ))}
