@@ -1,24 +1,43 @@
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import footerLogo from "@/assets/footer-logo.png";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerLinks = {
-    Company: ["About Us", "Our Team", "Careers", "Press"],
-    Services: ["Brand Identity", "Web Design", "Marketing", "Video Production"],
-    Resources: ["Blog", "Case Studies", "Newsletter", "FAQ"],
-    Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"]
+    Company: [
+      { name: "About Us", href: "#about" },
+      { name: "Our Team", href: "#team" },
+      { name: "Careers", href: "#" }
+    ],
+    Services: [
+      { name: "Brand Identity", href: "#portfolio" },
+      { name: "Web Design", href: "#portfolio" },
+      { name: "Marketing", href: "#portfolio" }
+    ],
+    Resources: [
+      { name: "Clients Feedback", href: "#testimonials" },
+      { name: "Case Studies", href: "#about" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "FAQ", href: "#about" }
+    ],
+    Legal: [
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Cookie Policy", href: "#" }
+    ]
   };
   const socialLinks = [{
     icon: Facebook,
-    href: "#"
+    href: "https://www.facebook.com/advarzstudio"
   }, {
     icon: Instagram,
-    href: "#"
+    href: "https://www.instagram.com/advarzstudio"
   }, {
     icon: Linkedin,
-    href: "#"
+    href: "https://www.linkedin.com/company/advarzstudio/"
   }, {
     icon: Youtube,
-    href: "#"
+    href: "https://www.youtube.com/@AdvarzStudio"
   }];
   return <footer className="bg-gradient-to-br from-foreground to-foreground/95 text-background">
       <div className="container mx-auto px-6 py-16">
@@ -26,8 +45,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <div className="text-3xl font-bold tracking-tight">advarz</div>
-              
+              <img src={footerLogo} alt="Advarz Studio" className="h-12" />
             </div>
             <p className="text-background/70 mb-6 max-w-sm">
               Transforming brands through creative excellence and innovative marketing strategies.
@@ -43,9 +61,9 @@ const Footer = () => {
           {Object.entries(footerLinks).map(([title, links]) => <div key={title}>
               <h4 className="font-bold mb-4">{title}</h4>
               <ul className="space-y-2">
-                {links.map(link => <li key={link}>
-                    <a href="#" className="text-background/70 hover:text-background transition-colors">
-                      {link}
+                {links.map(link => <li key={link.name}>
+                    <a href={link.href} className="text-background/70 hover:text-background transition-colors">
+                      {link.name}
                     </a>
                   </li>)}
               </ul>

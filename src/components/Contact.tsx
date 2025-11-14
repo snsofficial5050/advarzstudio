@@ -80,8 +80,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1 text-foreground">Email Us</h4>
-                  <p className="text-muted-foreground">hello@advarzstudio.com</p>
-                  <p className="text-muted-foreground">support@advarzstudio.com</p>
+                  <p className="text-muted-foreground">advarzstudio@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -93,8 +92,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1 text-foreground">Call Us</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  <p className="text-muted-foreground">Mon-Fri, 9am-6pm EST</p>
+                  <p className="text-muted-foreground">+8801634-391240</p>
                 </div>
               </div>
             </div>
@@ -106,8 +104,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1 text-foreground">Visit Us</h4>
-                  <p className="text-muted-foreground">123 Creative Street</p>
-                  <p className="text-muted-foreground">Design District, NY 10001</p>
+                  <p className="text-muted-foreground">Dhaka, Bangladesh.</p>
                 </div>
               </div>
             </div>
