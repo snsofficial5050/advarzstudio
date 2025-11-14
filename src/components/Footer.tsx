@@ -1,8 +1,16 @@
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import footerLogo from "@/assets/footer-logo.png";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [clickedLink, setClickedLink] = useState<string | null>(null);
+
+  const handleLinkClick = (linkName: string) => {
+    setClickedLink(linkName);
+    setTimeout(() => setClickedLink(null), 300);
+  };
   const footerLinks = {
     Company: [
       { name: "About Us", href: "#about" },
@@ -45,13 +53,15 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src={footerLogo} alt="Advarz Studio" className="h-12" />
+              <Link to="/">
+                <img src={footerLogo} alt="Advarz Studio" className="h-12" />
+              </Link>
             </div>
             <p className="text-background/70 mb-6 max-w-sm">
               Transforming brands through creative excellence and innovative marketing strategies.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social, index) => <a key={index} href={social.href} className="w-10 h-10 bg-background/10 hover:bg-[#004AC3] rounded-lg flex items-center justify-center transition-all hover:scale-110">
+              {socialLinks.map((social, index) => <a key={index} href={social.href} onClick={() => handleLinkClick(`social-${index}`)} className={`w-10 h-10 bg-background/10 hover:bg-[#004AC3] rounded-lg flex items-center justify-center transition-all hover:scale-110 ${clickedLink === `social-${index}` ? 'animate-slide-in-right' : ''}`}>
                   <social.icon className="w-5 h-5" />
                 </a>)}
             </div>
@@ -62,7 +72,7 @@ const Footer = () => {
               <h4 className="font-bold mb-4">{title}</h4>
               <ul className="space-y-2">
                 {links.map(link => <li key={link.name}>
-                    <a href={link.href} className="text-background/70 hover:text-background transition-colors">
+                    <a href={link.href} onClick={() => handleLinkClick(link.name)} className={`text-background/70 hover:text-background transition-colors inline-block ${clickedLink === link.name ? 'animate-slide-in-right' : ''}`}>
                       {link.name}
                     </a>
                   </li>)}
