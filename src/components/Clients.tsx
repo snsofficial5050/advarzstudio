@@ -1,30 +1,21 @@
 import { useRef, useState, useEffect } from "react";
-import logo1 from "@/assets/clients/logo-1.png";
-import logo2 from "@/assets/clients/logo-2.png";
-import logo3 from "@/assets/clients/logo-3.png";
-import logo4 from "@/assets/clients/logo-4.png";
-import logo5 from "@/assets/clients/logo-5.png";
-import logo6 from "@/assets/clients/logo-6.png";
-import logo7 from "@/assets/clients/logo-7.png";
-import logo8 from "@/assets/clients/logo-8.png";
-import logo14 from "@/assets/clients/logo-14.png";
 
 const Clients = () => {
   const clients = [
-    { name: "Client 1", logo: logo1 },
-    { name: "Client 2", logo: logo2 },
-    { name: "Client 3", logo: logo3 },
-    { name: "Client 4", logo: logo4 },
-    { name: "Client 5", logo: logo5 },
-    { name: "Client 6", logo: logo6 },
-    { name: "Client 7", logo: logo7 },
-    { name: "Client 8", logo: logo8 },
+    { name: "Client 1", logo: "https://i.postimg.cc/MHNk4JQj/1.png" },
+    { name: "Client 2", logo: "https://i.postimg.cc/9M0njNVZ/2.png" },
+    { name: "Client 3", logo: "https://i.postimg.cc/x8MrWFyp/3.png" },
+    { name: "Client 4", logo: "https://i.postimg.cc/W12RH8FN/4.png" },
+    { name: "Client 5", logo: "https://i.postimg.cc/Y0cZfzKx/5.png" },
+    { name: "Client 6", logo: "https://i.postimg.cc/bwYMTvM4/6.png" },
+    { name: "Client 7", logo: "https://i.postimg.cc/x8SpbjLn/7.png" },
+    { name: "Client 8", logo: "https://i.postimg.cc/CKBcPnNY/8.png" },
     { name: "Client 9", logo: "https://i.postimg.cc/SRpCGJZG/Logo-01.png" },
-    { name: "Client 10", logo: "https://i.postimg.cc/Ssczjmyk/Logo-02.png" },
-    { name: "Client 11", logo: "https://i.postimg.cc/L6xgJCMq/Logo-03.png" },
-    { name: "Client 12", logo: "https://i.postimg.cc/vTQDB9qL/Logo-04.png" },
-    { name: "Client 13", logo: "https://i.postimg.cc/L6Qh9Jzf/Logo-05.png" },
-    { name: "Client 14", logo: logo14 },
+    { name: "Client 10", logo: "https://i.postimg.cc/XvssQMt6/Logo-01.png" },
+    { name: "Client 11", logo: "https://i.postimg.cc/J0ZcwSYh/Logo-02.png" },
+    { name: "Client 12", logo: "https://i.postimg.cc/pdSDmP3w/Logo-03.png" },
+    { name: "Client 13", logo: "https://i.postimg.cc/HLFypBy7/Logo-04.png" },
+    { name: "Client 14", logo: "https://i.postimg.cc/XYJGdTKW/Logo-05.png" },
   ];
 
   // Duplicate clients for seamless loop
@@ -134,7 +125,7 @@ const Clients = () => {
           {duplicatedClients.map((client, index) => (
             <div
               key={index}
-              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all flex-shrink-0"
+              className="flex items-center justify-center flex-shrink-0"
             >
               <img
                 src={client.logo}
