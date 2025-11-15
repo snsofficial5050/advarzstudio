@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 const Pricing = () => {
   const plans = [
     {
-      name: "Starter",
-      price: "1,999",
+      name: "Startup",
+      price: "BDT. 6,300",
       description: "Perfect for small businesses just getting started",
       features: [
         "Logo Design",
-        "Basic Brand Guidelines",
-        "3 Social Media Templates",
-        "Business Card Design",
-        "1 Revision Round",
-        "2 Week Delivery",
+        "Brand Identity Design",
+        "4 Social Media Design",
+        "Revision - 3 Times",
+        "Dedicated Team Support",
+        "Delivery Time - 7 Days",
       ],
       highlighted: false,
     },
