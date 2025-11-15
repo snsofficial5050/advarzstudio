@@ -3,11 +3,53 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
+import { useState, useEffect, useRef } from "react";
+
+declare global {
+  interface Window {
+    emailjs: any;
+  }
+}
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (window.emailjs) {
+      window.emailjs.init("iBetgdgu5P5lyzft5");
+    }
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
+    
+    if (!formRef.current) return;
+    
+    const formData = new FormData(formRef.current);
+    const templateParams = {
+      from_name: formData.get("name"),
+      from_email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    setIsSubmitting(true);
+
+    try {
+      await window.emailjs.send(
+        "service_x5rw8o5",
+        "template_phsh349",
+        templateParams
+      );
+      toast.success("Message sent successfully!");
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast.error("Failed to send. Try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -30,19 +72,19 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="card-elegant">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2 text-foreground">
                     Name
                   </label>
-                  <Input placeholder="Your name" required />
+                  <Input name="name" placeholder="Your name" required />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2 text-foreground">
                     Email
                   </label>
-                  <Input type="email" placeholder="your@email.com" required />
+                  <Input name="email" type="email" placeholder="your@email.com" required />
                 </div>
               </div>
 
@@ -50,7 +92,7 @@ const Contact = () => {
                 <label className="block text-sm font-medium mb-2 text-foreground">
                   Subject
                 </label>
-                <Input placeholder="What can we help you with?" required />
+                <Input name="subject" placeholder="What can we help you with?" required />
               </div>
 
               <div>
@@ -58,14 +100,21 @@ const Contact = () => {
                   Message
                 </label>
                 <Textarea
+                  name="message"
                   placeholder="Tell us about your project..."
                   rows={6}
                   required
                 />
               </div>
 
-              <Button variant="hero" size="lg" type="submit" className="w-full">
-                Send Message
+              <Button 
+                variant="hero" 
+                size="lg" 
+                type="submit" 
+                className="w-full" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="ml-2" size={18} />
               </Button>
             </form>
