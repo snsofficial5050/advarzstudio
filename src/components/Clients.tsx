@@ -10,7 +10,7 @@ const Clients = () => {
     { name: "Client 6", logo: "https://i.postimg.cc/bwYMTvM4/6.png" },
     { name: "Client 7", logo: "https://i.postimg.cc/x8SpbjLn/7.png" },
     { name: "Client 8", logo: "https://i.postimg.cc/CKBcPnNY/8.png" },
-    { name: "Client 9", logo: "https://i.postimg.cc/SRpCGJZG/Logo-01.png" },
+    { name: "Client 9", logo: "https://i.postimg.cc/tCQrkg60/9.png" },
     { name: "Client 10", logo: "https://i.postimg.cc/XvssQMt6/Logo-01.png" },
     { name: "Client 11", logo: "https://i.postimg.cc/J0ZcwSYh/Logo-02.png" },
     { name: "Client 12", logo: "https://i.postimg.cc/pdSDmP3w/Logo-03.png" },
