@@ -5,7 +5,7 @@ const Services = () => {
   const services = [
     {
       icon: Palette,
-      title: "Brand Identity",
+      title: "Logo & Brand Identity",
       description: "Complete brand identity packages including logo, color palette, typography, and style guides",
       features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Stationery Design"],
     },
@@ -17,13 +17,13 @@ const Services = () => {
     },
     {
       icon: Code,
-      title: "Web Design",
+      title: "Web Design & Development",
       description: "Beautiful, responsive websites that deliver exceptional user experiences",
       features: ["UI/UX Design", "Responsive Design", "Custom Development", "E-commerce"],
     },
     {
       icon: Video,
-      title: "Video Production",
+      title: "Video Editing",
       description: "Engaging video content that tells your story and captivates your audience",
       features: ["Promotions Ads", "Reels Editing", "Campaign Short Editing", "Full Video Editing"],
     },
