@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="space-y-8 fade-in-up">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
               <Sparkles size={16} />
-              <span>Creative Marketing Agency</span>
+              <span>Creative Advertising Agency</span>
             </div>
 
             <h1 className="text-foreground leading-tight font-bold">
