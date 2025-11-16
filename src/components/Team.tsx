@@ -44,7 +44,7 @@ const Team = () => {
       name: "Antar Bala",
       role: "Sr. Visualizer",
       image: davidProfile,
-      bio: "Senior Graphic Designer at Advarz Studio",
+      bio: "Senior Visualizer at Advarz Studio",
       social: {
         facebook: "https://www.facebook.com/antar.bala.2024",
         instagram: "https://www.instagram.com/antarbala7/",
