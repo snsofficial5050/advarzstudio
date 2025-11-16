@@ -28,7 +28,7 @@ const Pricing = () => {
         "Video Revision - 2 Times",
         "Advance Brand Strategy",
         "Dedicated Team Support",
-        "Delivery Time - 1 Month",
+        "Delivery Time - 30 Days",
       ],
       highlighted: true,
     },
