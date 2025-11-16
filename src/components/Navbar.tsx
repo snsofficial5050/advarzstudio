@@ -40,16 +40,17 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
+          
           {/* Logo */}
-          <a href="#hero" className="flex items-center" onClick={(e) => {
-            e.preventDefault();
-            scrollToSection("#hero");
-          }}>
-            <img 
-              src={logo} 
-              alt="Advarz Studio" 
-              className="h-12 w-auto object-contain"
-            />
+          <a
+            href="#hero"
+            className="flex items-center"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#hero");
+            }}
+          >
+            <img src={logo} alt="Advarz Studio" className="h-12 w-auto object-contain" />
           </a>
 
           {/* Desktop Navigation */}
@@ -69,9 +70,15 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* UPDATED CTA BUTTON — WhatsApp New Tab */}
           <div className="hidden md:block">
-            <Button variant="accent" size="lg" onClick={() => scrollToSection("#contact")}>
+            <Button
+              variant="accent"
+              size="lg"
+              onClick={() => {
+                window.open("https://wa.me/8801634391240", "_blank");
+              }}
+            >
               Get Started
             </Button>
           </div>
@@ -102,7 +109,16 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="accent" size="lg" className="w-full" onClick={() => scrollToSection("#contact")}>
+
+              {/* UPDATED Mobile CTA — WhatsApp New Tab */}
+              <Button
+                variant="accent"
+                size="lg"
+                className="w-full"
+                onClick={() => {
+                  window.open("https://wa.me/8801634391240", "_blank");
+                }}
+              >
                 Get Started
               </Button>
             </div>
