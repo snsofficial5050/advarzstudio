@@ -22,7 +22,7 @@ const Testimonials = () => {
       role: "Managing Partner at Sujon Seed",
       image: "https://i.postimg.cc/k4v7Xgk3/client-01.png",
       quote: "We tried several agencies before, but Advarz Studio finally felt right. They understand our needs and work like part of our team.",
-      rating: 4.5,
+      rating: 4,
     },
     {
       name: "David Kim",
