@@ -25,10 +25,10 @@ const Testimonials = () => {
       rating: 4,
     },
     {
-      name: "David Kim",
-      role: "Owner, Café Moderne",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
-      quote: "From concept to execution, everything was flawless. They truly understood our vision and brought it to life beautifully.",
+      name: "Akbar Ali",
+      role: "Owner, AK Technology",
+      image: "https://i.postimg.cc/YCdnkKXW/497446488-760377576865534-410312.png",
+      quote: "As a new business, we needed clarity. Advarz Studio made the visual side simple and delivered clean, purposeful work.",
       rating: 5,
     },
   ];
