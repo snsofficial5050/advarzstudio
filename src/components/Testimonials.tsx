@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: "Tufayel Hossain",
       role: "Group Strategy Manager at Truman",
       image: "https://i.postimg.cc/fTKSgwLt/client-02.png",
-      quote: "Our social media looked scattered and unplanned for a long time. Once Advarz Studio took over, everything felt organized. People now take our brand more seriously because of the visuals they create. Their timely delivery has built real trust.",
+      quote: "Our social media became far more organized after Advarz Studio took charge. The visuals now make people take our brand seriously.",
       rating: 5,
     },
     {
