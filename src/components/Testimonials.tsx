@@ -18,11 +18,11 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
-      role: "Marketing Director, BrightWave",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-      quote: "The marketing campaign they created for us generated incredible results. Our engagement increased by 300% in just two months!",
-      rating: 5,
+      name: "Junayid Hossain",
+      role: "Managing Partner at Sujon Seed",
+      image: "https://i.postimg.cc/k4v7Xgk3/client-01.png",
+      quote: "We tried several agencies before, but Advarz Studio finally felt right. They understand our needs and work like part of our team.",
+      rating: 4.5,
     },
     {
       name: "David Kim",
