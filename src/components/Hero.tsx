@@ -25,6 +25,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 py-24 md:py-32 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
           {/* Left Content */}
           <div className="space-y-8 fade-in-up">
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
@@ -43,12 +44,13 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              {/* UPDATED BUTTON */}
+
+              {/* UPDATED BUTTON — WhatsApp new tab */}
               <Button
                 variant="hero"
                 size="xl"
                 onClick={() => {
-                  window.location.href = "https://wa.me/8801634391240";
+                  window.open("https://wa.me/8801634391240", "_blank");
                 }}
               >
                 Start Your Project
@@ -93,6 +95,7 @@ const Hero = () => {
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary rounded-2xl rotate-12 opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-full opacity-20 animate-pulse delay-500"></div>
           </div>
+
         </div>
       </div>
 
