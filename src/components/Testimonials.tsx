@@ -11,10 +11,10 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      name: "Michael Chen",
-      role: "Founder, GrowthHub",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-      quote: "Working with this team was an absolute pleasure. They delivered stunning designs ahead of schedule and within budget.",
+      name: "Tufayel Hossain",
+      role: "Group Strategy Manager at Truman",
+      image: "https://i.postimg.cc/fTKSgwLt/client-02.png",
+      quote: "Our social media looked scattered and unplanned for a long time. Once Advarz Studio took over, everything felt organized. People now take our brand more seriously because of the visuals they create. Their timely delivery has built real trust.",
       rating: 5,
     },
     {
