@@ -9,7 +9,7 @@ const Pricing = () => {
       description: "Perfect for small businesses just getting started",
       features: [
         "Logo Design",
-        "Brand Identity Design",
+        "Basic Brand Guideline",
         "4 Social Media Design",
         "Revision - 3 Times",
         "Dedicated Team Support",
