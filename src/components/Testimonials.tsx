@@ -4,10 +4,10 @@ import { useRef, useEffect, useState } from "react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechVenture",
+      name: "Shahidul Islam",
+      role: "Founder, CEO at Markertion",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-      quote: "Advarz Studio completely transformed our brand identity. Their creative approach and attention to detail exceeded all expectations.",
+      quote: "We used to struggle to explain what we wanted visually. After Advarz Studio stepped in, everything became much easier. They understood our brand and created designs that honestly surprised us. The quality of their work and their way of dealing with clients feels very genuine.",
       rating: 5,
     },
     {
