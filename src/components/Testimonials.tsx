@@ -7,7 +7,7 @@ const Testimonials = () => {
       name: "Shahidul Islam",
       role: "Founder, CEO at Markertion",
       image: "https://i.postimg.cc/Sx21ftQJ/client-03.png",
-      quote: "We used to struggle to explain what we wanted visually. After Advarz Studio stepped in, everything became much easier. They understood our brand and created designs that honestly surprised us. The quality of their work and their way of dealing with clients feels very genuine.",
+      quote: "Advarz Studio understood our brand better than we expected. Their designs felt thoughtful and exactly on point.",
       rating: 5,
     },
     {
