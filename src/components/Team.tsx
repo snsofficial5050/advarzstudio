@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import emilyProfile from "@/assets/emily-profile.png";
+import emilyProfile from "@/assets/src/assets/Profile-picture-of-Shahriar-Nayem-Suny-05.jpg";
 import sarahProfile from "@/assets/sarah-profile.jpg";
 import michaelProfile from "@/assets/michael-profile.jpg";
 import davidProfile from "@/assets/david-profile.jpg";
